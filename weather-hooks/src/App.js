@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import './App.css';
-import Form from './Form';
-import Weather from './Weather';
+import Form from './Form'
+import Weather from './Weather'
 
 function App() {
   const [weather,setWeather] = useState([])
