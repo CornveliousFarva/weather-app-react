@@ -1,17 +1,20 @@
 import React from 'react'
 
 const Weather = ({description, city, country, error, temperature}) => {
-    if(description){
+
+    function matchValues(){
+     if(description){
         const weatherDescription = description.split(' ')
         const keyWords = ['cloudy', 'clouds', 'cloud', 'overcast']
         for(let i = 0; i < weatherDescription.length; i++){
-            if(keyWords.includes(weatherDescription[i])){
-                console.log(weatherDescription[i], ': we have a match')
+            if(keyWords.includes(weatherDescription[i])) {
+                // eslint-disable-next-line jsx-a11y/alt-text
+                return <img src="weather-hooks/src/clouds.jpeg" />
             }
         }
         console.log(keyWords)
-        console.log(weatherDescription)
-    }
+        console.log(weatherDescription)   
+    }}
 
     return (
         <div>
@@ -19,6 +22,7 @@ const Weather = ({description, city, country, error, temperature}) => {
             {temperature && <p>{temperature} °F</p>}
             {description && <p> Conditions: {description}</p>}
             {error && <p>{error}</p>}
+            {description && matchValues()}
         </div>
     )
 }
