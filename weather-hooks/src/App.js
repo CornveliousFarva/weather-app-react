@@ -30,7 +30,12 @@ function App() {
       <h3>WEATHER APP</h3>
       <Form getWeather={fetchData} />
       <Weather
-      
+      city={weather.city}
+      country={weather.country}
+      description={weather.description}
+      temperature={weather.temperature}
+      error={weather.error}
+      />
       {console.log(weather.data)}
     </div>
   );
@@ -38,4 +43,3 @@ function App() {
 
 export default App;
 
-// Example of an api call: api.openweathermap.org/data/2.5/weather?q=London,uk&appid={API key} 'ea1900db3ce66ed95b04daad90622699'
