@@ -11,7 +11,7 @@ function App() {
     const city = e.target.elements.city.value
     const country = e.target.elements.country.value
       e.preventDefault()
-    const apiData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=${APIKEY}`)
+    const apiData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${APIKEY}`)
       .then( res => res.json())
       .then(data => data)
       setWeather({
@@ -42,4 +42,5 @@ function App() {
 }
 
 export default App;
+
 
